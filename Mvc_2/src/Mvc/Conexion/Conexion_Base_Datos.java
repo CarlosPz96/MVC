@@ -21,6 +21,7 @@ import java.util.logging.Logger;
 public class Conexion_Base_Datos {
 
     Connection con;
+    Statement st;
     String url = "jdbc:mysql://localhost:3306/clase?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
     String driver = "com.mysql.cj.jdbc.Driver";
 
@@ -50,5 +51,4 @@ public class Conexion_Base_Datos {
     public void close(Connection con) throws SQLException {
         con.close();
     }
-
 }

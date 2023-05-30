@@ -267,7 +267,7 @@ public class Interfaz_Persona extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tabla_personas);
 
-        PanelConsulta.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 820, 250));
+        PanelConsulta.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 820, 240));
 
         txtBuscarTodo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtBuscarTodo.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -323,7 +323,7 @@ public class Interfaz_Persona extends javax.swing.JFrame {
 
     private void txtBuscarTodoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarTodoKeyPressed
 
-        /*String[] titulos = {"ID", "NOMBRES","APELLIDOS","FECHA NACIMIENTO","TELEFONO","SEXO","SUELDO","CUPO","FOTO","CORREO"};
+        String[] titulos = {"ID", "NOMBRES","APELLIDOS","FECHA NACIMIENTO","TELEFONO","SEXO","SUELDO","CUPO","FOTO","CORREO"};
         Object[] registros = new Object[50];
 
         String sql = "SELECT * FROM clase.persona WHERE idpersona LIKE '%" + txtBuscarTodo.getText() + "%' "
@@ -356,7 +356,7 @@ public class Interfaz_Persona extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
-        }*/
+        }
     }//GEN-LAST:event_txtBuscarTodoKeyPressed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed

@@ -61,6 +61,7 @@ public class SQL_Persona {
             
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
+            //System.out.println("cedula ya registrada");
         } finally {
             try {
                 miconector.close(stmt);
