@@ -7,6 +7,7 @@ package Mvc.Persona;
 
 import Mvc.conexion.Conexion_Base_Datos;
 import static com.sun.javafx.tk.Toolkit.getToolkit;
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -47,7 +48,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @author CyJ
  */
 public class Controlador_Persona implements ActionListener {
-
+    
     SQL_Persona sql = new SQL_Persona();
     Clase_Persona gg = new Clase_Persona();
     Interfaz_Persona insertAre = new Interfaz_Persona();
@@ -58,35 +59,47 @@ public class Controlador_Persona implements ActionListener {
     //BOTONES
     public Controlador_Persona(Interfaz_Persona evento1) {
         this.insertAre = evento1;
-
+        
         this.insertAre.btnGuardar.addActionListener(this);
         this.insertAre.btnModificar.addActionListener(this);
         this.insertAre.btnEliminar.addActionListener(this);
         this.insertAre.btnCancelar.addActionListener(this);
         this.insertAre.btnCalcular.addActionListener(this);
         this.insertAre.btnFoto.addActionListener(this);
-
+        this.insertAre.brnAbrirGuardar.addActionListener(this);
+        this.insertAre.brnAbrirModificar.addActionListener(this);
+        
         seleccionarPersona();
         limpiarTabla();
         listar(insertAre.tabla_personas);
-
+        insertAre.dialogoInterfaz.setText("ON");
+        insertAre.panelColor.setBackground(Color.GREEN);
     }
 
     //ACCIONES BOTONES
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        
         if (e.getSource() == insertAre.btnGuardar) {
             agregar();
             limpiarTabla();
             listar(insertAre.tabla_personas);
-
+            
         }
-
+        
         if (e.getSource() == insertAre.btnCancelar) {
             limpiar();
         }
-
+        if (e.getSource() == insertAre.brnAbrirGuardar) {
+            
+            abrirdialog();
+            
+        }
+        if (e.getSource() == insertAre.brnAbrirModificar) {
+            
+            abrirdialogMod();
+            
+        }
         if (e.getSource() == insertAre.btnFoto) {
             try {
                 seleccionarFoto();
@@ -94,49 +107,50 @@ public class Controlador_Persona implements ActionListener {
                 Logger.getLogger(Controlador_Persona.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-
+        
         if (e.getSource() == insertAre.btnCalcular) {
             fecha();
         }
-
+        
         if (e.getSource() == insertAre.btnModificar) {
-
+            
             actualizar();
             limpiarTabla();
             listar(insertAre.tabla_personas);
         }
-
+        
         if (e.getSource() == insertAre.btnEliminar) {
             int fila = insertAre.tabla_personas.getSelectedRow();
             if (fila == -1) {
                 JOptionPane.showMessageDialog(null, "Debe seleccionar una Persona");
             } else {
-
+                
                 String i = insertAre.tabla_personas.getValueAt(fila, 0).toString();
-
+                
                 Clase_Persona persona = new Clase_Persona(i);
-
+                
                 sql.eliminar(persona);
                 JOptionPane.showMessageDialog(insertAre, "Eliminado correctamente");
                 limpiarTabla();
                 listar(insertAre.tabla_personas);
-
+                limpiar();
+                
             }
         }
-
+        
     }
 
     //METODO LISTAR
     public void listar(JTable tabla) {
-
+        
         centrarCeldas(tabla);
         modelo = (DefaultTableModel) tabla.getModel();
         tabla.setModel(modelo);
         List<Clase_Persona> listaArea = sql.seleccionar();
         Object[] objecto = new Object[10];
-
+        
         for (int i = 0; i < listaArea.size(); i++) {
-
+            
             objecto[0] = listaArea.get(i).getIdPersona();
             objecto[1] = listaArea.get(i).getNombresPersona();
             objecto[2] = listaArea.get(i).getApellidosPersona();
@@ -147,22 +161,22 @@ public class Controlador_Persona implements ActionListener {
             objecto[7] = listaArea.get(i).getCupoPersona();
             objecto[8] = listaArea.get(i).getFotoPersona();
             objecto[9] = listaArea.get(i).getCorreoPersona();
-
+            
             modelo.addRow(objecto);
         }
-
+        
         insertAre.tabla_personas.setModel(modelo);
-
+        
     }
     //FIN METODO LISTAR
 
     //METODO AGREGAR
     public void agregar() {
-
+        
         if (insertAre.txt_cedula.getText().isEmpty() || insertAre.txt_nombre.getText().isEmpty() || insertAre.txt_apellido.getText().isEmpty() || insertAre.txt_fecha_nacimiento == null || insertAre.txt_telefono.getText().isEmpty() || insertAre.txt_sexo.getSelectedItem().equals("SELECCIONAR") || Double.valueOf(insertAre.txt_sueldo.getText()) <= 0 || Integer.parseInt(insertAre.txt_cupo.getText()) < 0 || insertAre.txt_foto.getText().isEmpty() || insertAre.txt_correo.getText().isEmpty()) {
-
+            
             JOptionPane.showMessageDialog(null, "Debe Completar la informacion");
-
+            
         } else {
 
             //EXTRAER DATOS
@@ -189,18 +203,18 @@ public class Controlador_Persona implements ActionListener {
             gg.setCupoPersona(cupo);
             gg.setFotoPersona(foto);
             gg.setCorreoPersona(correo);
-
+            
             try {
-
+                
                 sql.insertar(gg);
                 JOptionPane.showMessageDialog(null, "Datos guardados");
                 limpiarTabla();
                 limpiar();
-
+                
             } catch (Exception e) {
                 //System.out.println(e.toString());
                 JOptionPane.showMessageDialog(null, "No se pudo guardar");
-
+                
             }
         }
     }
@@ -208,11 +222,11 @@ public class Controlador_Persona implements ActionListener {
 
 //METODO ACTUALIZAR
     public void actualizar() {
-
+        
         if (insertAre.txt_cedula.getText().isEmpty() || insertAre.txt_nombre.getText().isEmpty() || insertAre.txt_apellido.getText().isEmpty() || insertAre.txt_fecha_nacimiento == null || insertAre.txt_telefono.getText().isEmpty() || insertAre.txt_sexo.getSelectedItem().equals("SELECCIONAR") || Double.valueOf(insertAre.txt_sueldo.getText()) <= 0 || Integer.parseInt(insertAre.txt_cupo.getText()) < 0 || insertAre.txt_foto.getText().isEmpty() || insertAre.txt_correo.getText().isEmpty()) {
-
+            
             JOptionPane.showMessageDialog(null, "Debe Completar la informacion");
-
+            
         } else {
 
             //EXTRAER DATOS
@@ -239,23 +253,23 @@ public class Controlador_Persona implements ActionListener {
             gg.setCupoPersona(cupo);
             gg.setFotoPersona(foto);
             gg.setCorreoPersona(correo);
-
+            
             try {
-
+                
                 sql.actualizar(gg);
-
+                
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");
-
+                
                 limpiarTabla();
-
+                
                 limpiar();
-
+                
             } catch (Exception e) {
-
+                
                 JOptionPane.showMessageDialog(null, "No se pudo guardar");
-
+                
             }
-
+            
         }
     }
 
@@ -274,53 +288,53 @@ public class Controlador_Persona implements ActionListener {
             modelo.removeRow(i);
             i = i - 1;
         }
-
+        
     }
 
     //CALCULAR EDAD
     public void fecha() {
-
+        
         try {
-
+            
             Calendar fechaseleccionada = insertAre.txt_fecha_nacimiento.getCalendar();
             int dia = fechaseleccionada.get(Calendar.DAY_OF_WEEK);
             int mes = fechaseleccionada.get(Calendar.MONTH);
             int año = fechaseleccionada.get(Calendar.YEAR);
-
+            
             SimpleDateFormat fecha = new SimpleDateFormat("dd/MM/yyyy");
-
+            
             LocalDate fechaDeNacimiento = LocalDate.of(año, mes, dia);
             LocalDate fechaActual = LocalDate.now();
             Period edad = Period.between(fechaDeNacimiento, fechaActual);
-
+            
             int edadstr = edad.getYears();
-
+            
             insertAre.txt_edad.setText(String.valueOf(edadstr));
-
+            
         } catch (Exception e) {
-
+            
             JOptionPane.showMessageDialog(null, "Escoja una Fecha");
-
+            
         }
-
+        
     }
 
     //FOTO
     private void seleccionarFoto() throws IOException {
-
+        
         File archivo;
         JFileChooser FlcAbrirArch = new JFileChooser();
         FlcAbrirArch.setFileFilter(new FileNameExtensionFilter("archivo de imagen", "jpg", "jpeg"));
         int respuesta = FlcAbrirArch.showOpenDialog(this.insertAre);
-
+        
         if (respuesta == JFileChooser.APPROVE_OPTION) {
-
+            
             archivo = FlcAbrirArch.getSelectedFile();
             insertAre.txt_foto.setText(archivo.getAbsolutePath());
             Image foto = ImageIO.read(new File(insertAre.txt_foto.getText()));
             foto = foto.getScaledInstance(262, 234, 1);
             insertAre.imagen.setIcon(new ImageIcon(foto));
-
+            
         }
     }
 
@@ -330,32 +344,32 @@ public class Controlador_Persona implements ActionListener {
             @Override
             public void mousePressed(MouseEvent Mouse_evt) {
                 if (Mouse_evt.getClickCount() == 1) {
-
+                    
                     insertAre.txt_cedula.setEnabled(false);
-
+                    
                     insertAre.btnGuardar.setEnabled(false);
-
+                    
                     insertAre.txt_cedula.setText(insertAre.tabla_personas.getValueAt(insertAre.tabla_personas.getSelectedRow(), 0).toString());
-
+                    
                     insertAre.txt_nombre.setText(insertAre.tabla_personas.getValueAt(insertAre.tabla_personas.getSelectedRow(), 1).toString());
-
+                    
                     insertAre.txt_apellido.setText(insertAre.tabla_personas.getValueAt(insertAre.tabla_personas.getSelectedRow(), 2).toString());
-
+                    
                     int fila = insertAre.tabla_personas.rowAtPoint(Mouse_evt.getPoint());
                     insertAre.txt_fecha_nacimiento.setDate(Date.valueOf(insertAre.tabla_personas.getValueAt(fila, 3).toString()));
-
+                    
                     insertAre.txt_telefono.setText(insertAre.tabla_personas.getValueAt(insertAre.tabla_personas.getSelectedRow(), 4).toString());
-
+                    
                     insertAre.txt_sexo.setSelectedItem(insertAre.tabla_personas.getValueAt(insertAre.tabla_personas.getSelectedRow(), 5).toString());
-
+                    
                     insertAre.txt_sueldo.setText(insertAre.tabla_personas.getValueAt(insertAre.tabla_personas.getSelectedRow(), 6).toString());
-
+                    
                     insertAre.txt_cupo.setText(insertAre.tabla_personas.getValueAt(insertAre.tabla_personas.getSelectedRow(), 7).toString());
-
+                    
                     insertAre.txt_foto.setText(insertAre.tabla_personas.getValueAt(insertAre.tabla_personas.getSelectedRow(), 8).toString());
-
+                    
                     insertAre.txt_correo.setText(insertAre.tabla_personas.getValueAt(insertAre.tabla_personas.getSelectedRow(), 9).toString());
-
+                    
                     Image foto;
                     try {
                         foto = ImageIO.read(new File(insertAre.txt_foto.getText()));
@@ -365,15 +379,39 @@ public class Controlador_Persona implements ActionListener {
                         Logger.getLogger(Controlador_Persona.class
                                 .getName()).log(Level.SEVERE, null, ex);
                     }
-
+                    
                 }
             }
         });
     }
 
-//LIMPIADOR DE TEXTO
-    public void limpiar() {
+    //DIALOG
+    public void abrirdialog() {
+        
+        insertAre.MiDialogo.setVisible(true);
+        insertAre.MiDialogo.setTitle("GUARDAR");
+        insertAre.btnGuardar.setVisible(true);
+        insertAre.btnEliminar.setVisible(true);
+        insertAre.btnModificar.setVisible(false);
+        
+        insertAre.MiDialogo.setSize(850, 360);
+    }
 
+    //DIALOG
+    public void abrirdialogMod() {
+        
+        insertAre.MiDialogo.setVisible(true);
+        insertAre.MiDialogo.setTitle("MODIFICAR");
+        insertAre.btnModificar.setVisible(true);
+        insertAre.btnGuardar.setVisible(false);
+        insertAre.btnEliminar.setVisible(true);
+        insertAre.MiDialogo.setSize(850, 360);
+        
+    }
+//LIMPIADOR DE TEXTO
+
+    public void limpiar() {
+        
         insertAre.txt_cedula.setEnabled(true);
         insertAre.btnGuardar.setEnabled(true);
         insertAre.txt_cedula.setText("");
@@ -388,7 +426,8 @@ public class Controlador_Persona implements ActionListener {
         insertAre.txt_foto.setText("");
         insertAre.txt_sueldo.setText("");
         insertAre.imagen.setIcon(null);
-
+        insertAre.MiDialogo.dispose();
+        
     }
-
+    
 }

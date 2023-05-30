@@ -51,41 +51,195 @@ public class Interfaz_Persona extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        MiDialogo = new javax.swing.JDialog();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        txt_cedula = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        txt_nombre = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        txt_apellido = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        txt_fecha_nacimiento = new com.toedter.calendar.JDateChooser();
+        jLabel22 = new javax.swing.JLabel();
+        btnCalcular = new javax.swing.JButton();
+        txt_foto = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        txt_telefono = new javax.swing.JTextField();
+        txt_sexo = new javax.swing.JComboBox<>();
+        txt_sueldo = new javax.swing.JTextField();
+        txt_cupo = new javax.swing.JTextField();
+        txt_correo = new javax.swing.JTextField();
+        btnFoto = new javax.swing.JButton();
+        imagen = new javax.swing.JLabel();
+        btnGuardar = new javax.swing.JButton();
+        txt_edad = new javax.swing.JTextField();
+        btnModificar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         PanelConsulta = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabla_personas = new javax.swing.JTable();
         txtBuscarTodo = new javax.swing.JTextField();
-        btnGuardar = new javax.swing.JButton();
-        btnModificar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
+        brnAbrirGuardar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        brnAbrirModificar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         PanelCrear = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        txt_foto = new javax.swing.JTextField();
-        txt_correo = new javax.swing.JTextField();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        txt_cupo = new javax.swing.JTextField();
-        txt_sueldo = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        txt_sexo = new javax.swing.JComboBox<>();
-        txt_telefono = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        txt_cedula = new javax.swing.JTextField();
-        txt_nombre = new javax.swing.JTextField();
-        txt_apellido = new javax.swing.JTextField();
-        txt_fecha_nacimiento = new com.toedter.calendar.JDateChooser();
-        txt_edad = new javax.swing.JTextField();
-        btnFoto = new javax.swing.JButton();
-        imagen = new javax.swing.JLabel();
-        btnCalcular = new javax.swing.JButton();
+        dialogoInterfaz = new javax.swing.JLabel();
+        panelColor = new javax.swing.JPanel();
+
+        MiDialogo.setResizable(false);
+        MiDialogo.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel18.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("CEDULA:");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 130, -1));
+
+        txt_cedula.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jPanel1.add(txt_cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 180, 26));
+
+        jLabel19.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("NOMBRE:");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 160, -1));
+
+        txt_nombre.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txt_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_nombreKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 180, 26));
+
+        jLabel20.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("APELLIDO:");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 90, -1));
+
+        txt_apellido.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jPanel1.add(txt_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 180, 26));
+
+        jLabel21.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("FECHA NACIMIENTO:");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 160, -1));
+
+        txt_fecha_nacimiento.setDateFormatString("yyyy-MM-dd");
+        jPanel1.add(txt_fecha_nacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 150, -1));
+
+        jLabel22.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("EDAD:");
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 120, -1));
+
+        btnCalcular.setBackground(new java.awt.Color(102, 102, 0));
+        btnCalcular.setText("CALCULAR");
+        jPanel1.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 100, -1));
+
+        txt_foto.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jPanel1.add(txt_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 180, -1));
+
+        jLabel23.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("FOTOS:");
+        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, 70, -1));
+
+        jLabel24.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setText("CORREO:");
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 70, -1));
+
+        jLabel25.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setText("CUPO:");
+        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 70, -1));
+
+        jLabel26.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setText("SUELDO:");
+        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 70, -1));
+
+        jLabel27.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("SEXO:");
+        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 60, -1));
+
+        jLabel28.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setText("TELEFONO:");
+        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 90, -1));
+        jPanel1.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 40, 180, 26));
+
+        txt_sexo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txt_sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "MASCULINO", "FEMENINO", "OTRO" }));
+        jPanel1.add(txt_sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, 180, -1));
+
+        txt_sueldo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jPanel1.add(txt_sueldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 180, -1));
+
+        txt_cupo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jPanel1.add(txt_cupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, 180, -1));
+
+        txt_correo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jPanel1.add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 180, -1));
+
+        btnFoto.setBackground(new java.awt.Color(102, 102, 0));
+        btnFoto.setText("BUSCAR");
+        btnFoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFotoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, -1, -1));
+
+        imagen.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 40, 160, 170));
+
+        btnGuardar.setBackground(new java.awt.Color(0, 102, 102));
+        btnGuardar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 290, 100, -1));
+
+        txt_edad.setEditable(false);
+        txt_edad.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txt_edad.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(0, 0, 0)));
+        txt_edad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_edadMouseClicked(evt);
+            }
+        });
+        jPanel1.add(txt_edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 40, 26));
+
+        btnModificar.setBackground(new java.awt.Color(0, 102, 102));
+        btnModificar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnModificar.setText("Modificar");
+        jPanel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 290, 100, -1));
+
+        btnCancelar.setBackground(new java.awt.Color(0, 102, 102));
+        btnCancelar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, 100, -1));
+
+        MiDialogo.getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 350));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -113,7 +267,7 @@ public class Interfaz_Persona extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tabla_personas);
 
-        PanelConsulta.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 820, 150));
+        PanelConsulta.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 820, 250));
 
         txtBuscarTodo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtBuscarTodo.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -123,166 +277,45 @@ public class Interfaz_Persona extends javax.swing.JFrame {
         });
         PanelConsulta.add(txtBuscarTodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 139, -1));
 
-        btnGuardar.setBackground(new java.awt.Color(0, 102, 102));
-        btnGuardar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnGuardar.setText("Guardar");
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
-            }
-        });
-        PanelConsulta.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 100, -1));
-
-        btnModificar.setBackground(new java.awt.Color(0, 102, 102));
-        btnModificar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnModificar.setText("Modificar");
-        PanelConsulta.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 100, -1));
-
-        btnEliminar.setBackground(new java.awt.Color(0, 102, 102));
-        btnEliminar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnEliminar.setText("Eliminar");
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
-        PanelConsulta.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, 90, -1));
-
-        btnCancelar.setBackground(new java.awt.Color(0, 102, 102));
-        btnCancelar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnCancelar.setText("Cancelar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
-            }
-        });
-        PanelConsulta.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 40, 100, -1));
+        brnAbrirGuardar.setBackground(new java.awt.Color(0, 102, 102));
+        brnAbrirGuardar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        brnAbrirGuardar.setText("INGRESAR");
+        PanelConsulta.add(brnAbrirGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, 110, -1));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Buscador:");
         PanelConsulta.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        getContentPane().add(PanelConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 241));
+        brnAbrirModificar.setBackground(new java.awt.Color(0, 102, 102));
+        brnAbrirModificar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        brnAbrirModificar.setText("MODIFICAR");
+        PanelConsulta.add(brnAbrirModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 40, 120, -1));
+
+        btnEliminar.setBackground(new java.awt.Color(0, 102, 102));
+        btnEliminar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnEliminar.setText("ELIMINAR");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+        PanelConsulta.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 40, 110, -1));
+
+        getContentPane().add(PanelConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 340));
 
         PanelCrear.setBackground(new java.awt.Color(0, 102, 102));
         PanelCrear.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("CEDULA:");
-        PanelCrear.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 130, -1));
+        dialogoInterfaz.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        dialogoInterfaz.setForeground(new java.awt.Color(255, 255, 255));
+        dialogoInterfaz.setText("OFF");
+        PanelCrear.add(dialogoInterfaz, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("NOMBRE:");
-        PanelCrear.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 160, -1));
+        panelColor.setBackground(new java.awt.Color(255, 0, 0));
+        PanelCrear.add(panelColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 30, 20));
 
-        jLabel11.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("APELLIDO:");
-        PanelCrear.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 90, -1));
-
-        jLabel12.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("FECHA NACIMIENTO:");
-        PanelCrear.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 160, -1));
-
-        jLabel9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("EDAD:");
-        PanelCrear.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 120, -1));
-
-        jLabel7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("FOTOS:");
-        PanelCrear.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, 70, -1));
-
-        txt_foto.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        PanelCrear.add(txt_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 180, -1));
-
-        txt_correo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        PanelCrear.add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 180, -1));
-
-        jLabel17.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("CORREO:");
-        PanelCrear.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 70, -1));
-
-        jLabel16.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("CUPO:");
-        PanelCrear.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 70, -1));
-
-        txt_cupo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        PanelCrear.add(txt_cupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, 180, -1));
-
-        txt_sueldo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        PanelCrear.add(txt_sueldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 180, -1));
-
-        jLabel15.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("SUELDO:");
-        PanelCrear.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 70, -1));
-
-        jLabel14.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("SEXO:");
-        PanelCrear.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 60, -1));
-
-        txt_sexo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txt_sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "MASCULINO", "FEMENINO", "OTRO" }));
-        PanelCrear.add(txt_sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, 180, -1));
-        PanelCrear.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 40, 180, 26));
-
-        jLabel13.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("TELEFONO:");
-        PanelCrear.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 90, -1));
-
-        txt_cedula.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        PanelCrear.add(txt_cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 180, 26));
-
-        txt_nombre.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txt_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_nombreKeyTyped(evt);
-            }
-        });
-        PanelCrear.add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 180, 26));
-
-        txt_apellido.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        PanelCrear.add(txt_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 180, 26));
-
-        txt_fecha_nacimiento.setDateFormatString("yyyy-MM-dd");
-        PanelCrear.add(txt_fecha_nacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 150, -1));
-
-        txt_edad.setEditable(false);
-        txt_edad.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txt_edad.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txt_edadMouseClicked(evt);
-            }
-        });
-        PanelCrear.add(txt_edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 40, 26));
-
-        btnFoto.setBackground(new java.awt.Color(102, 102, 0));
-        btnFoto.setText("BUSCAR");
-        btnFoto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFotoActionPerformed(evt);
-            }
-        });
-        PanelCrear.add(btnFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, -1, -1));
-
-        imagen.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        PanelCrear.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 40, 160, 170));
-
-        btnCalcular.setBackground(new java.awt.Color(102, 102, 0));
-        btnCalcular.setText("CALCULAR");
-        PanelCrear.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 100, -1));
-
-        getContentPane().add(PanelCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 238, 850, 290));
+        getContentPane().add(PanelCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 850, 40));
 
         pack();
         setLocationRelativeTo(null);
@@ -326,82 +359,62 @@ public class Interfaz_Persona extends javax.swing.JFrame {
         }*/
     }//GEN-LAST:event_txtBuscarTodoKeyPressed
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-    }//GEN-LAST:event_btnGuardarActionPerformed
-
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-
+        MiDialogo.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void txt_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_nombreKeyTyped
-
-        /*char dato = evt.getKeyChar();
-        boolean numeros = dato >= 48 && dato <= 57;
-        boolean backspace = dato == 8;
-        boolean espacio = dato == 32;
-        boolean mayusculas = dato >= 65 && dato <= 90;
-        boolean minusculas = dato >= 97 && dato <= 122;
-        boolean punto = dato == 46;
-        boolean guion = dato == 45;
-        boolean tildesMinusculas = dato >= 160 && dato <= 163;
-        boolean tildeE = dato == 130;
-        boolean ñ = dato == 164;
-        boolean Ñ = dato == 165;
-        boolean ETILDE = dato == 144;
-        boolean ATILDE = dato == 181;
-        boolean ITILDE = dato == 214;
-        boolean OTILDE = dato == 224;
-        boolean UTILDE = dato == 233;
-
-        if (!(mayusculas || backspace || ETILDE || ATILDE || ITILDE || OTILDE || UTILDE || Ñ || espacio || minusculas)) {
-
-            evt.consume();
-            JOptionPane.showMessageDialog(null, "Digito Incorrecto");
-            System.out.println("Dato es:" + dato);
-
-        }*/
-
+        // TODO add your handling code here:
     }//GEN-LAST:event_txt_nombreKeyTyped
 
-    private void txt_edadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_edadMouseClicked
-
-    }//GEN-LAST:event_txt_edadMouseClicked
-
     private void btnFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFotoActionPerformed
-
-
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnFotoActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void txt_edadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_edadMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_edadMouseClicked
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JDialog MiDialogo;
     public javax.swing.JPanel PanelConsulta;
     public javax.swing.JPanel PanelCrear;
+    public javax.swing.JButton brnAbrirGuardar;
+    public javax.swing.JButton brnAbrirModificar;
     public javax.swing.JButton btnCalcular;
     public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnFoto;
     public javax.swing.JButton btnGuardar;
     public javax.swing.JButton btnModificar;
+    public javax.swing.JLabel dialogoInterfaz;
     public javax.swing.JLabel imagen;
-    public javax.swing.JLabel jLabel10;
-    public javax.swing.JLabel jLabel11;
-    public javax.swing.JLabel jLabel12;
-    public javax.swing.JLabel jLabel13;
-    public javax.swing.JLabel jLabel14;
-    public javax.swing.JLabel jLabel15;
-    public javax.swing.JLabel jLabel16;
-    public javax.swing.JLabel jLabel17;
+    public javax.swing.JLabel jLabel18;
+    public javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    public javax.swing.JLabel jLabel7;
-    public javax.swing.JLabel jLabel8;
-    public javax.swing.JLabel jLabel9;
+    public javax.swing.JLabel jLabel20;
+    public javax.swing.JLabel jLabel21;
+    public javax.swing.JLabel jLabel22;
+    public javax.swing.JLabel jLabel23;
+    public javax.swing.JLabel jLabel24;
+    public javax.swing.JLabel jLabel25;
+    public javax.swing.JLabel jLabel26;
+    public javax.swing.JLabel jLabel27;
+    public javax.swing.JLabel jLabel28;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JPanel panelColor;
     public javax.swing.JTable tabla_personas;
     public javax.swing.JTextField txtBuscarTodo;
     public javax.swing.JTextField txt_apellido;
