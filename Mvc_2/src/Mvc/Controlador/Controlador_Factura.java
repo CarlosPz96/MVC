@@ -105,8 +105,7 @@ public class Controlador_Factura implements ActionListener {
         this.insertAre.boton_calcular_total.addActionListener(this);
         this.insertAre.btn_agregar_producto.addActionListener(this);
         this.insertAre.btn_salir_reporte.addActionListener(this);
-                this.insertAre.btn_imprimir.addActionListener(this);
-
+        this.insertAre.btn_imprimir.addActionListener(this);
 
         seleccionarFactura();
         limpiarTabla();
@@ -128,7 +127,7 @@ public class Controlador_Factura implements ActionListener {
         if (e.getSource() == insertAre.btn_imprimir) {
             generarreporte();
         }
-         if (e.getSource() == insertAre.btn_salir_reporte) {
+        if (e.getSource() == insertAre.btn_salir_reporte) {
             salirReporte();
         }
         if (e.getSource() == insertAre.btn_listo) {
@@ -479,8 +478,8 @@ public class Controlador_Factura implements ActionListener {
     }
 
     public void salirReporte() {
-       insertAre.Reporte.dispose();
-       insertAre.brnAbrirModificar.setEnabled(false);
+        insertAre.Reporte.dispose();
+        insertAre.brnAbrirModificar.setEnabled(false);
     }
 
     //VALIDACION CAMPOS DE TEXTO
@@ -782,12 +781,12 @@ public class Controlador_Factura implements ActionListener {
     public void stock() {
 
         int idprod = Integer.valueOf(insertAre.txt_id_producto.getText());
-        
+
         int cantidadcompra = (int) insertAre.txt_cantidad_detalle.getValue();
-        
+
         int fila = insertAre.tabla_productos.getSelectedRow();
         int cantidadBase = Integer.valueOf(insertAre.tabla_productos.getValueAt(fila, 3).toString());
-        
+
         int result = cantidadBase - cantidadcompra;
 
         claseProductos.setIdProducto(idprod);
@@ -801,11 +800,24 @@ public class Controlador_Factura implements ActionListener {
 
         }
     }
+
     private void generarreporte() {
         try {
             System.out.println("Imprimiendo");
             JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/factura.jasper"));
             Map<String, Object> params = new HashMap<String, Object>();
+
+            String Max = JOptionPane.showInputDialog("Ingresa el maximo");
+            Double p = Double.valueOf(Max);
+            params.put("Factura1", p);
+            String Min = JOptionPane.showInputDialog("Ingresa el minimo");
+            Double m = Double.valueOf(Min);
+            params.put("Factura2", m);
+            String titulo = JOptionPane.showInputDialog("Ingresa el título");
+            params.put("FacturaTitulo", titulo);
+            String dato = JOptionPane.showInputDialog("Ingresa la cedula del cliente");
+            params.put("FacturaParametro", dato);
+
             JasperPrint jp = JasperFillManager.fillReport(jr, params, miconector.getCon());
             JasperViewer pv = new JasperViewer(jp, false);
             pv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
