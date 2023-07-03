@@ -84,6 +84,7 @@ public class Interfaz_Producto extends javax.swing.JInternalFrame {
         btnEliminar = new javax.swing.JButton();
         btn_Buscar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
+        btn_imprimir = new javax.swing.JButton();
         PanelCrear = new javax.swing.JPanel();
         dialogoInterfaz = new javax.swing.JLabel();
         panelColor = new javax.swing.JPanel();
@@ -254,6 +255,11 @@ public class Interfaz_Producto extends javax.swing.JInternalFrame {
         btnLimpiar.setBorder(null);
         PanelConsulta.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 40, 30));
 
+        btn_imprimir.setBackground(new java.awt.Color(0, 102, 102));
+        btn_imprimir.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btn_imprimir.setText("IMPRIMIR");
+        PanelConsulta.add(btn_imprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, -1, -1));
+
         getContentPane().add(PanelConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 340));
 
         PanelCrear.setBackground(new java.awt.Color(0, 102, 102));
@@ -315,6 +321,7 @@ public class Interfaz_Producto extends javax.swing.JInternalFrame {
     public javax.swing.JButton btnLimpiar;
     public javax.swing.JButton btnModificar;
     public javax.swing.JButton btn_Buscar;
+    public javax.swing.JButton btn_imprimir;
     public javax.swing.JButton btn_salir;
     public javax.swing.JLabel dialogoInterfaz;
     public javax.swing.JLabel imagen;

@@ -51,4 +51,8 @@ public class Conexion_Base_Datos {
     public void close(Connection con) throws SQLException {
         con.close();
     }
+
+    public Connection getCon() {
+        return con;
+    }
 }

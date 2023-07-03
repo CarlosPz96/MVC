@@ -40,13 +40,22 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JTextField;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -77,6 +86,7 @@ public class Controlador_Persona implements ActionListener {
         this.insertAre.btn_Buscar.addActionListener(this);
         this.insertAre.btnLimpiar.addActionListener(this);
         this.insertAre.btn_salir.addActionListener(this);
+        this.insertAre.btn_imprimir.addActionListener(this);
 
         seleccionarPersona();
         limpiarTabla();
@@ -95,6 +105,9 @@ public class Controlador_Persona implements ActionListener {
             agregar();
             limpiarTabla();
             listar(insertAre.tabla_personas);
+        }
+         if (e.getSource() == insertAre.btn_imprimir) {
+            generarreporte();
         }
         if (e.getSource() == insertAre.btn_salir) {
             salir();
@@ -231,7 +244,7 @@ public class Controlador_Persona implements ActionListener {
                     JOptionPane.showMessageDialog(null, "Cedula incorrecta");
 
                 } else {
-                    
+
                     if (ValidarID() == false) {
 
                         JOptionPane.showMessageDialog(null, "Cedula ya registrada");
@@ -655,5 +668,19 @@ public class Controlador_Persona implements ActionListener {
         insertAre.txt_sueldo.setText("");
         insertAre.imagen.setIcon(null);
         insertAre.MiDialogo.dispose();
+    }
+
+    private void generarreporte() {
+        try {
+            System.out.println("Imprimiendo");
+            JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/persona.jasper"));
+            Map<String, Object> params = new HashMap<String, Object>();
+            JasperPrint jp = JasperFillManager.fillReport(jr, params, miconector.getCon());
+            JasperViewer pv = new JasperViewer(jp, false);
+            pv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            pv.setVisible(true);
+        } catch (JRException ex) {
+            Logger.getLogger(Controlador_Factura.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
