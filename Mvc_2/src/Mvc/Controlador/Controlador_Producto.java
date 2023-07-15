@@ -515,7 +515,6 @@ public class Controlador_Producto implements ActionListener {
 
     private void generarreporte() {
         try {
-            System.out.println("Imprimiendo");
             JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/producto.jasper"));
             Map<String, Object> params = new HashMap<String, Object>();
             JasperPrint jp = JasperFillManager.fillReport(jr, params, miconector.getCon());

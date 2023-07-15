@@ -106,7 +106,7 @@ public class Controlador_Persona implements ActionListener {
             limpiarTabla();
             listar(insertAre.tabla_personas);
         }
-         if (e.getSource() == insertAre.btn_imprimir) {
+        if (e.getSource() == insertAre.btn_imprimir) {
             generarreporte();
         }
         if (e.getSource() == insertAre.btn_salir) {
@@ -672,15 +672,17 @@ public class Controlador_Persona implements ActionListener {
 
     private void generarreporte() {
         try {
-            System.out.println("Imprimiendo");
             JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/persona.jasper"));
+
             Map<String, Object> params = new HashMap<String, Object>();
             JasperPrint jp = JasperFillManager.fillReport(jr, params, miconector.getCon());
             JasperViewer pv = new JasperViewer(jp, false);
             pv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             pv.setVisible(true);
+            
         } catch (JRException ex) {
             Logger.getLogger(Controlador_Factura.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex);
         }
     }
 }

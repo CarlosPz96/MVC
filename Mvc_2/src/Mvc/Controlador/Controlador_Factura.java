@@ -803,25 +803,29 @@ public class Controlador_Factura implements ActionListener {
 
     private void generarreporte() {
         try {
-            System.out.println("Imprimiendo");
             JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/factura.jasper"));
             Map<String, Object> params = new HashMap<String, Object>();
 
-            String Max = JOptionPane.showInputDialog("Ingresa el maximo");
-            Double p = Double.valueOf(Max);
-            params.put("Factura1", p);
-            String Min = JOptionPane.showInputDialog("Ingresa el minimo");
-            Double m = Double.valueOf(Min);
-            params.put("Factura2", m);
-            String titulo = JOptionPane.showInputDialog("Ingresa el título");
-            params.put("FacturaTitulo", titulo);
-            String dato = JOptionPane.showInputDialog("Ingresa la cedula del cliente");
-            params.put("FacturaParametro", dato);
+            try {
+                String Max = JOptionPane.showInputDialog("Ingresa el maximo");
+                Double p = Double.valueOf(Max);
+                params.put("Factura1", p);
+                String Min = JOptionPane.showInputDialog("Ingresa el minimo");
+                Double m = Double.valueOf(Min);
+                params.put("Factura2", m);
+                String titulo = JOptionPane.showInputDialog("Ingresa el título");
+                params.put("FacturaTitulo", titulo);
+                String dato = JOptionPane.showInputDialog("Ingresa la cedula del cliente");
+                params.put("FacturaParametro", dato);
 
-            JasperPrint jp = JasperFillManager.fillReport(jr, params, miconector.getCon());
-            JasperViewer pv = new JasperViewer(jp, false);
-            pv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            pv.setVisible(true);
+                JasperPrint jp = JasperFillManager.fillReport(jr, params, miconector.getCon());
+                JasperViewer pv = new JasperViewer(jp, false);
+                pv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+                pv.setVisible(true);
+                
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "PARAMETRO MAL INGRESADO");
+            }
         } catch (JRException ex) {
             Logger.getLogger(Controlador_Factura.class.getName()).log(Level.SEVERE, null, ex);
         }

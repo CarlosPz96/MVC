@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
-<!-- 2023-07-03T18:20:51 -->
+<!-- 2023-07-04T08:07:28 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="factura" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13acf49e-4913-4d1b-bccc-113817ad15d1">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CLASE"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
@@ -34,9 +34,7 @@
 	clase.factura.totalfactura,
 	clase.factura.clientefactura
 FROM clase.factura
-WHERE clase.factura.clientefactura =  $P{FacturaParametro} 
-
-]]>
+WHERE clase.factura.clientefactura =  $P{FacturaParametro}]]>
 	</queryString>
 	<field name="idfactura" class="java.lang.String"/>
 	<field name="fechafactura" class="java.sql.Date"/>
@@ -49,29 +47,29 @@ WHERE clase.factura.clientefactura =  $P{FacturaParametro}
 				<frame>
 					<reportElement mode="Opaque" x="0" y="7" width="555" height="24" forecolor="#B89F7D" backcolor="#000000" uuid="0a5fc4ac-2e39-4b7a-8f96-59f8eb2df66d"/>
 					<staticText>
-						<reportElement x="1" y="0" width="100" height="24" forecolor="#FFFFFF" uuid="a14db707-0a1e-414a-985e-e6d1defbab92"/>
-						<textElement verticalAlignment="Middle">
+						<reportElement x="0" y="0" width="169" height="24" forecolor="#FFFFFF" uuid="a14db707-0a1e-414a-985e-e6d1defbab92"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
 							<font size="11"/>
 						</textElement>
 						<text><![CDATA[ID]]></text>
 					</staticText>
 					<staticText>
-						<reportElement x="150" y="0" width="100" height="24" forecolor="#FFFFFF" uuid="db5bd2a3-ca5f-44ea-bd6d-4de8a54f3a19"/>
-						<textElement verticalAlignment="Middle">
+						<reportElement x="169" y="0" width="120" height="24" forecolor="#FFFFFF" uuid="db5bd2a3-ca5f-44ea-bd6d-4de8a54f3a19"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
 							<font size="11"/>
 						</textElement>
 						<text><![CDATA[FECHA]]></text>
 					</staticText>
 					<staticText>
-						<reportElement x="310" y="-1" width="100" height="24" forecolor="#FFFFFF" uuid="4a55ea1c-fe99-41c8-8344-e7b278314049"/>
-						<textElement verticalAlignment="Middle">
+						<reportElement x="289" y="0" width="120" height="24" forecolor="#FFFFFF" uuid="4a55ea1c-fe99-41c8-8344-e7b278314049"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
 							<font size="11"/>
 						</textElement>
 						<text><![CDATA[TOTAL]]></text>
 					</staticText>
 					<staticText>
-						<reportElement x="453" y="0" width="100" height="24" forecolor="#FFFFFF" uuid="205b7e57-6bf6-435e-8d67-cccc4e1e8301"/>
-						<textElement verticalAlignment="Middle">
+						<reportElement x="409" y="0" width="142" height="24" forecolor="#FFFFFF" uuid="205b7e57-6bf6-435e-8d67-cccc4e1e8301"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
 							<font size="11"/>
 						</textElement>
 						<text><![CDATA[C.l.CLIENTE]]></text>
@@ -110,6 +108,10 @@ WHERE clase.factura.clientefactura =  $P{FacturaParametro}
 					</textElement>
 					<textFieldExpression><![CDATA[$P{FacturaTitulo}]]></textFieldExpression>
 				</textField>
+				<image>
+					<reportElement x="450" y="0" width="101" height="94" uuid="c747b253-6de3-4734-85e2-41408d403a7f"/>
+					<imageExpression><![CDATA["C:/Users/Carlo/OneDrive/Documentos/TERCERO A/Preogramacion Visual/411745.png"]]></imageExpression>
+				</image>
 			</frame>
 			<frame>
 				<reportElement mode="Opaque" x="0" y="100" width="553" height="32" forecolor="#000000" backcolor="#CC0000" uuid="e3c14156-5b51-4201-918b-97fdc012e5d4"/>
@@ -130,22 +132,49 @@ WHERE clase.factura.clientefactura =  $P{FacturaParametro}
 		<band height="26" splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="33" splitType="Stretch">
+		<band height="30" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="100" height="30" uuid="011511f5-79cd-41f7-9a59-136fa789fdca"/>
-				<textElement verticalAlignment="Middle"/>
+				<reportElement x="0" y="0" width="169" height="30" uuid="011511f5-79cd-41f7-9a59-136fa789fdca"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{idfactura}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="150" y="0" width="100" height="30" uuid="4d1d2436-29f3-4328-a45c-1c73944d9c9c"/>
+				<reportElement x="169" y="0" width="120" height="30" uuid="4d1d2436-29f3-4328-a45c-1c73944d9c9c"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{fechafactura}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="Style1" x="305" y="0" width="100" height="30" uuid="47ad6a84-45da-4ff5-9aab-2041600fb37b"/>
+				<reportElement style="Style1" x="289" y="0" width="120" height="30" uuid="47ad6a84-45da-4ff5-9aab-2041600fb37b"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{totalfactura}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="453" y="0" width="100" height="30" uuid="23d73595-c5c6-4426-9928-11b8be587953"/>
+				<reportElement x="409" y="0" width="146" height="30" uuid="23d73595-c5c6-4426-9928-11b8be587953"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{clientefactura}]]></textFieldExpression>
 			</textField>
 		</band>

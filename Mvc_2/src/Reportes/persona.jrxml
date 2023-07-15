@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
-<!-- 2023-07-01T18:06:46 -->
+<!-- 2023-07-14T21:11:41 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="persona" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13acf49e-4913-4d1b-bccc-113817ad15d1">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CLASE"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value="Y2xhc2UucGVyc29uYSBBUyAsMTQ1LDEyNSxiYWQ3MDVlZi0wMjQwLTRhN2QtYmIwNy1kMTRjZDE0&#xA;ZGE0NzI7"/>
@@ -36,36 +36,36 @@ FROM clase.persona]]>
 				<frame>
 					<reportElement mode="Opaque" x="0" y="7" width="555" height="24" forecolor="#B89F7D" backcolor="#000000" uuid="0a5fc4ac-2e39-4b7a-8f96-59f8eb2df66d"/>
 					<staticText>
-						<reportElement x="2" y="1" width="100" height="23" forecolor="#FFFFFF" uuid="3cb69d6a-81ae-438d-b5a3-46c457fd1303"/>
-						<textElement verticalAlignment="Middle">
+						<reportElement x="2" y="1" width="106" height="23" forecolor="#FFFFFF" uuid="3cb69d6a-81ae-438d-b5a3-46c457fd1303"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
 							<font size="11"/>
 						</textElement>
 						<text><![CDATA[CEDULA]]></text>
 					</staticText>
 					<staticText>
-						<reportElement x="108" y="0" width="100" height="23" forecolor="#FFFFFF" uuid="d247d110-84c7-458c-b4d2-4d6c4e97d433"/>
-						<textElement verticalAlignment="Middle">
+						<reportElement x="108" y="0" width="103" height="23" forecolor="#FFFFFF" uuid="d247d110-84c7-458c-b4d2-4d6c4e97d433"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
 							<font size="11"/>
 						</textElement>
 						<text><![CDATA[NOMBRES]]></text>
 					</staticText>
 					<staticText>
-						<reportElement x="211" y="0" width="100" height="23" forecolor="#FFFFFF" uuid="7b4ea7f7-cec2-485b-a533-7b4505c7457d"/>
-						<textElement verticalAlignment="Middle">
+						<reportElement x="211" y="0" width="105" height="23" forecolor="#FFFFFF" uuid="7b4ea7f7-cec2-485b-a533-7b4505c7457d"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
 							<font size="11"/>
 						</textElement>
 						<text><![CDATA[APELLIDOS]]></text>
 					</staticText>
 					<staticText>
-						<reportElement x="316" y="0" width="100" height="23" forecolor="#FFFFFF" uuid="79149fc0-e23f-4933-92d4-81e3ec145a9d"/>
-						<textElement verticalAlignment="Middle">
+						<reportElement x="316" y="0" width="104" height="23" forecolor="#FFFFFF" uuid="79149fc0-e23f-4933-92d4-81e3ec145a9d"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
 							<font size="11"/>
 						</textElement>
 						<text><![CDATA[TELEFONO]]></text>
 					</staticText>
 					<staticText>
-						<reportElement x="420" y="0" width="100" height="23" forecolor="#FFFFFF" uuid="7ac31788-1089-4331-b43f-77f834057f5b"/>
-						<textElement verticalAlignment="Middle">
+						<reportElement x="420" y="0" width="135" height="23" forecolor="#FFFFFF" uuid="7ac31788-1089-4331-b43f-77f834057f5b"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
 							<font size="11"/>
 						</textElement>
 						<text><![CDATA[CORREO]]></text>
@@ -74,7 +74,7 @@ FROM clase.persona]]>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="6"/>
+			<band/>
 		</groupFooter>
 	</group>
 	<group name="Group2">
@@ -91,19 +91,23 @@ FROM clase.persona]]>
 			<frame>
 				<reportElement mode="Opaque" x="0" y="0" width="555" height="95" backcolor="#000000" uuid="6c6ca4e1-17cd-4913-93d6-5e670ea9ae8a"/>
 				<staticText>
-					<reportElement style="SubTitle" x="157" y="66" width="249" height="29" uuid="8978eac3-c578-41c9-837e-48d2b0184642"/>
-					<textElement textAlignment="Center">
+					<reportElement style="SubTitle" x="0" y="60" width="130" height="29" uuid="8978eac3-c578-41c9-837e-48d2b0184642"/>
+					<textElement textAlignment="Left">
 						<font size="22" isBold="false"/>
 					</textElement>
 					<text><![CDATA[REPORTE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Title" x="166" y="9" width="229" height="57" forecolor="#FFFFFF" uuid="a31e189d-b749-437a-8d81-c873feef5ba2"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="26"/>
+					<reportElement style="Title" x="0" y="0" width="220" height="57" forecolor="#FFFFFF" uuid="a31e189d-b749-437a-8d81-c873feef5ba2"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="43"/>
 					</textElement>
 					<text><![CDATA[PERSONAS]]></text>
 				</staticText>
+				<image>
+					<reportElement x="451" y="0" width="100" height="95" uuid="da9f55be-9c2f-4845-aa4a-dbbd85f875dd"/>
+					<imageExpression><![CDATA["C:/Users/Carlo/OneDrive/Documentos/TERCERO A/Preogramacion Visual/6193914.png"]]></imageExpression>
+				</image>
 			</frame>
 			<frame>
 				<reportElement mode="Opaque" x="0" y="100" width="555" height="32" forecolor="#000000" backcolor="#CC0000" uuid="e3c14156-5b51-4201-918b-97fdc012e5d4"/>
@@ -124,43 +128,73 @@ FROM clase.persona]]>
 		<band height="26" splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="48" splitType="Stretch">
+		<band height="30" splitType="Stretch">
 			<textField>
-				<reportElement x="2" y="8" width="100" height="30" uuid="cade83c5-d7e4-4375-ac44-90f1464f2ce9"/>
+				<reportElement x="0" y="0" width="108" height="30" uuid="cade83c5-d7e4-4375-ac44-90f1464f2ce9"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{idpersona}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="107" y="8" width="100" height="30" uuid="0c2f3184-6172-49e3-aab4-81d16b34008c"/>
+				<reportElement x="108" y="0" width="103" height="30" uuid="0c2f3184-6172-49e3-aab4-81d16b34008c"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{nombres}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="211" y="8" width="100" height="30" uuid="1264264a-7e44-4251-bae5-15b07efb885d"/>
+				<reportElement x="211" y="0" width="105" height="30" uuid="1264264a-7e44-4251-bae5-15b07efb885d"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{apellidos}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="315" y="8" width="100" height="30" uuid="54cc67d6-f664-48bd-922f-974575244030"/>
+				<reportElement x="316" y="0" width="104" height="30" uuid="54cc67d6-f664-48bd-922f-974575244030"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="421" y="8" width="89" height="30" uuid="c33e0daa-0136-454a-9015-97f8b73d5c3a"/>
+				<reportElement x="420" y="0" width="134" height="30" uuid="c33e0daa-0136-454a-9015-97f8b73d5c3a"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{correo}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="7" splitType="Stretch">
-			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="1133a906-5b71-476e-9f3e-bc97c97058c1"/>
-				<graphicElement>
-					<pen lineWidth="0.5" lineColor="#999999"/>
-				</graphicElement>
-			</line>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="25" splitType="Stretch">
+		<band height="24" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="729c3539-f946-4d0e-a0a7-bda2815ea1b0"/>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="729c3539-f946-4d0e-a0a7-bda2815ea1b0"/>
 				<textField evaluationTime="Report">
 					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="4834e99c-7f6c-485a-b098-50e5187f2ab4"/>
 					<textElement verticalAlignment="Middle">
@@ -186,6 +220,13 @@ FROM clase.persona]]>
 		</band>
 	</pageFooter>
 	<summary>
-		<band splitType="Stretch"/>
+		<band height="322" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<subreport>
+				<reportElement x="2" y="16" width="551" height="290" uuid="4f604f8e-37da-42ec-ac3c-6cf2805ac1e8"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["C:/Users/Carlo/OneDrive/Documentos/GitHub/MVC/Mvc_2/src/Reportes/grafico.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
 	</summary>
 </jasperReport>
